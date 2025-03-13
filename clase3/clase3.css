@@ -2,7 +2,6 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .contenedor_padre {
     display: grid;
     gap: 20px;
@@ -27,6 +26,17 @@
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.quien{
+    display: flex;
+    flex-direction: row;
+    padding-right: 3%;
+}
+.w2,.w3{
+    color: rgba(255, 255, 255, 0.562);
     text-align: center;
 }
 
@@ -35,6 +45,12 @@
     display: flex;
     padding: 70px;
     color: rgb(255, 83, 3);
+    
+}
+.x{
+    display: flex;
+    justify-content:end;
+    
 }
 
 .cont_2 {
@@ -57,6 +73,8 @@
     object-fit: cover;
     width: 100%;
     background-color: #ffffff;
+    display: flex;
+    justify-content:center
 }
 
 .cont_1_2 {
@@ -110,7 +128,7 @@
     align-items: center;
     justify-content: space-between; 
     background: white;
-    padding: 20px;
+    padding-bottom: 3%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -124,6 +142,7 @@
     border-radius: 10px;
     object-fit: cover;
     max-height: 200px; 
+    height: 200px;
 }
 
 .proyecto p {
@@ -134,7 +153,7 @@
 button {
     background-color: rgb(255, 94, 0);
     color: white;
-    padding: 10px 20px;
+    padding: 3%;
     border: none;
     width: 150px;
     height: 60px;
@@ -159,7 +178,7 @@ button:hover {
 }
 
 img {
-    padding: 20px;
+    
     border-radius: 50%;
 }
 
@@ -183,6 +202,16 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+p{
+    padding: 3%;
+}
+.imgd{
+    padding: 3%;
+}
+.botonn{
+    padding: 3%;
+}
+
 @media (max-width: 1024px) {
     .cont_1 {
         flex-direction: column;
@@ -244,9 +273,6 @@ body {
     }
 }
 @media (max-width: 500px) {
-    *{
-        padding: 0%;
-    }
     .cont_sup {
         font-size: 16px;
     }
@@ -276,16 +302,13 @@ body {
     }
 
     button {
-        width: 100%;
+        width: 30%;
         font-size: 16px;
         height: 45px;
     }
     .x{
         width: 300px;
         align-items: center;
-    }
-    .cont_1_1 {
-        width: 0px;
     }
     .cont_3_1{
         padding: 0px;
@@ -325,6 +348,13 @@ body {
     grid-template-columns: 1fr
     }
     .cont_3{
-        row-gap: 30%
+        row-gap: 30%;
+        padding-bottom: 3%;
     }
+    .proyecto{
+        padding-bottom: 3%;
+    }
+.quien{
+    padding-right: 5%;
+}
 }
