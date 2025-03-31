@@ -47,7 +47,7 @@
     font-size: 200%;
 }
 
-.hijo3, .hijo4, .hijo5 {
+.hijo3, .hijo4 {
     display: flex;
     justify-content: center;
     align-items: stretch; 
@@ -58,6 +58,15 @@
 }
 
 .hijo4 {
+    margin-bottom: 30px;
+}
+.hijo5{
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
     margin-bottom: 30px;
 }
 
