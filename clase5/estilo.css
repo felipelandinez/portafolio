@@ -204,6 +204,90 @@ h1 {
     }
 
 }
+@media (max-width: 480px) {
+    .llineas {
+        width: 100%;
+        background: repeating-linear-gradient(
+            to bottom,
+            #000 0%,
+            #000 3%,
+            transparent 3%,
+            transparent 6%);
+    }
+    .padre {
+        width: 100%;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    img {
+        width: 90%;
+    }
+    .linea {
+        display: flex;
+        justify-content: center;
+    }
+    .aptitudes {
+        display: flex;
+        justify-content: center;
+    }
+    .tex {
+        display: flex;
+        justify-content: center;
+    }
+    .h_4, .h_5, .h_6 {
+        font-size: 0.9rem;
+        gap: 5%;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+@media (max-width: 400px) {
+    .llineas {
+        width: 100%; 
+        background: repeating-linear-gradient(
+            to bottom,
+            #000 0%,
+            #000 3%,
+            transparent 3%,
+            transparent 6%);
+    }
+    .padre {
+        width: 100%;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 1.5rem;
+        text-align: center; 
+    }
+    img {
+        width: 80%; 
+        margin: 0 auto; 
+        display: block;
+    }
+    .linea {
+        display: flex;
+        justify-content: center;
+    }
+    .aptitudes {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px; 
+    }
+    .tex {
+        display: flex;
+        justify-content: center;
+    }
+    .h_4, .h_5, .h_6 {
+        font-size: 0.9rem;
+        gap: 5%;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+
 
 
 @media (max-width: 300px) {
