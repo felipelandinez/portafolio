@@ -45,6 +45,7 @@ img {
 .linea {
     padding-left: 11%;
     padding-bottom: 5%;
+    
 }
 .aptitudes {
     display: inline-block;
@@ -156,6 +157,7 @@ h1 {
     .linea{
         display: flex;
         justify-content: center;
+        padding-left: 0%;
     }
     .aptitudes{
         display: flex;

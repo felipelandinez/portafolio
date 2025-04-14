@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    text-decoration: none;
 }
 
 .padre {
@@ -68,6 +69,7 @@
     width: 100%;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    margin-top: 2%;
 }
 
 .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2 {
@@ -114,24 +116,45 @@ button {
     color: #154285;
     padding: 20px;
 }
+.hijo5_3 {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px; 
+    width: 90%; 
+    min-height: 450px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; 
+    text-align: center;
+}
+
+.img_tienda {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 @media (max-width: 768px) {
     .hijo1 {
         grid-template-columns: 1fr; 
         text-align: center;
     }
-    
+
     .tex2 {
-        text-align: center; 
-    }
-    
-    .hijo3, .hijo4, .hijo5 {
-        flex-direction: column; 
-        align-items: center; 
+        text-align: center;
     }
 
-    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2 {
-        width: 90%; 
+    .hijo3, .hijo4, .hijo5 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2, .hijo5_3 {
+        width: 90%;
         max-width: 250px;
         min-height: auto;
     }
@@ -139,35 +162,34 @@ button {
 
 @media (max-width: 480px) {
     .tex1, .tex2 {
-        font-size: 120%; 
+        font-size: 120%;
     }
 
     .tex3 {
         font-size: 150%;
     }
 
-    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2 {
+    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2, .hijo5_3 {
         max-width: 220px;
         padding: 15px;
     }
 
     button {
-        width: 100%; 
+        width: 100%;
         height: 35px;
         font-size: 14px;
-        margin-top: 10px; 
-        box-sizing: border-box; 
+        margin-top: 10px;
+        box-sizing: border-box;
     }
 
     .a {
-        display: block; 
-        width: 100%; 
-        text-align: center; 
-        color: #ffffff; 
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #ffffff;
         text-decoration: none;
     }
 }
-
 
 @media (max-width: 300px) {
     .hijo1 {
@@ -178,8 +200,8 @@ button {
         font-size: 100%;
     }
 
-    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2 {
-        width: 100%; 
+    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2, .hijo5_3 {
+        width: 100%;
         max-width: 180px;
         padding: 10px;
     }
@@ -190,5 +212,4 @@ button {
         font-size: 12px;
     }
 }
-
 
