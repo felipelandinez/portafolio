@@ -749,6 +749,7 @@ padding-top: 50%;
 }
 
 @media (max-width: 768px) {
+    
     .hijo3,.hijo4 {
         display: flex;
         flex-direction: column;
@@ -759,7 +760,7 @@ padding-top: 50%;
       .hijo5 {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between; 
+        justify-content: center; 
         gap: 2%; 
         width: 90%;
         padding: 0;
@@ -804,63 +805,68 @@ padding-top: 50%;
       .hijo_3_3, .hijo_4_1,.hijo_4_2,.hijo_4_3{
         width: 90%;
         box-sizing: border-box;
-      } }
-@media (max-width: 480px) {
-    .hijo3,.hijo4 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 20px; 
       }
-      .hijo5 {
-        display: flex;
-        flex-wrap: nowrap; 
-        justify-content: space-between;
-        width: 90%;
-        padding: 0;
-        padding-top: 2%;
-        
-    }
-    
-    .hijo_5_1,
-    .hijo_5_2,
-    .hijo_5_3,
-    .hijo_5_4 {
-        width: 24%; 
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .hijo_3_3,.hijo_4_3{
-        margin-top: 0%;
-    }
-    .imgss{
-        width: 30%;
-        gap: 0%;
-    }
-    .t_1,.t_2_1{
-        padding-top: 20%;
-        
-    }
-    .aur{
-        padding: 0%;
-        width: 80%;
-        left: 20%;
-    }
-    .pc{
-        width: 80%;
-        left: 20%;
-    }
-    .reali{
-        width: 60%;
-        left: 40%;
-    }
-
-      .hijo_3_2,.hijo_3_1,
-      .hijo_3_3, .hijo_4_1,.hijo_4_2,.hijo_4_3{
-        width: 90%;
-        box-sizing: border-box;
-      }  }
+     }
+      @media (max-width: 550px) {
+        .hijo3,.hijo4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 20px; 
+          }
+          .hijo5 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 2%; 
+            width: 90%;
+            padding: 0;
+            padding-top: 2%;
+        }
+        .hijo_5_1,
+        .hijo_5_2,
+        .hijo_5_3,
+        .hijo_5_4 {
+            width: 48%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            margin-bottom: 2%; 
+        }
+        .hijo_3_3,.hijo_4_3{
+            margin-top: 0%;
+        }
+        .imgss{
+            width: 30%;
+            gap: 0%;
+        }
+        .t_1,.t_2_1{
+            padding-top: 20%;
+            
+        }
+        .aur{
+            padding: 0%;
+            width: 80%;
+            left: 20%;
+        }
+        .pc{
+            width: 80%;
+            left: 20%;
+        }
+        .reali{
+            width: 60%;
+            left: 40%;
+        }
+          .hijo_3_2,.hijo_3_1,
+          .hijo_3_3, .hijo_4_1,.hijo_4_2,.hijo_4_3{
+            width: 90%;
+            box-sizing: border-box;
+          }
+          .tex_2_3{
+            font-size: 300% }
+            .aud{
+                top: -40%;
+            }
+         }
