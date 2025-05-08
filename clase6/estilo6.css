@@ -736,13 +736,16 @@
         box-sizing: border-box;
         margin-top: 2%;
     }
+
     .hijo6_izquierda .txt_grande {
         font-size: 350%;
         width: 70%;
     }
+
     .hijo6_derecha .txt_grande {
         font-size: 220%;
     }
+
     .aud {
         width: 140%;
         top: -80%;
@@ -827,6 +830,47 @@
 
 @media (max-width: 768px) {
 
+
+    .hijo1 {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 90% 10%;
+    padding: 1%;
+    width: 90%;
+}
+
+
+
+.home {
+    font-family: 'Arial', sans-serif;
+    color: black;
+    font-weight: bold;
+}
+
+.tex {
+    font-family: 'Arial', sans-serif;
+    color: gray;
+    font-size: 100%;
+}
+
+.hijo_1_2 {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    justify-content: right;
+}
+
+.lupa,
+.bolsa {
+    width: 0%;
+}
+
+.login {
+    font-family: 'Arial', sans-serif;
+    color: black;
+    font-weight: bold;
+}
     .hijo3,
     .hijo4 {
         display: flex;
@@ -900,17 +944,53 @@
         box-sizing: border-box;
     }
 }
-@media (max-width: 710px){
-    
+
+@media (max-width: 710px) {
+
     .aud {
         padding: 0%;
         width: 150%;
         left: 30%;
-        top:-50%;
+        top: -50%;
     }
+    .tex {
+    font-family: 'Arial', sans-serif;
+    color: gray;
+    font-size: 90%;
 }
+}
+
+@media (max-width:590px) {
+    .hijo1 {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 95% 5%;
+    padding: 1%;
+    width: 90%;
+}
+    .tex_2_3 {
+        font-size: 450%;
+    }
+
+    .img1 {
+        width: 90%;
+        top: 30%;
+        right: 0;
+    }
+        .tex {
+    font-family: 'Arial', sans-serif;
+    color: gray;
+    font-size: 70%;
+}
+}
+
 @media (max-width: 550px) {
 
+        .tex {
+    font-family: 'Arial', sans-serif;
+    color: gray;
+    font-size: 70%;
+}
     .hijo3,
     .hijo4 {
         display: flex;
@@ -988,40 +1068,75 @@
         font-size: 300%
     }
 
-    
-    .hijo6{
+
+    .hijo6 {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .hijo6{
+
+    .hijo6 {
         text-align: center;
     }
-    .hijo6_izquierda{
+
+    .hijo6_izquierda {
         padding-left: 0%;
     }
-    .hijo6_izquierda .txt_grande  {
+
+    .hijo6_izquierda .txt_grande {
         font-size: 350%;
         width: 100%;
         padding-left: 0%;
         text-align: center;
     }
+
     .hijo6_izquierda .txt_peq_abajo,
-.hijo6_derecha .txt_peq_abajo {
-    font-size: 90%;
-    color: #f8dada;
-    width: 100%;
+    .hijo6_derecha .txt_peq_abajo {
+        font-size: 90%;
+        color: #f8dada;
+        width: 100%;
+    }
+
+    .hijo6_derecha {
+        padding-right: 0%;
+    }
+
+    .bot6 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .aud {
+        width: 100%;
+        top: -140%;
+        left: 5%;
+    }
 }
-.hijo6_derecha{
-    padding-right: 0%;
+@media (max-width: 480px){
+    .tex{text-align: center;}
+    .login{
+        font-size: 70%;
+        gap: 0%;
+    }
 }
-.bot6{
+@media (max-width: 430px){
+    .hijo_1_1 {
+    background-color: rgb(255, 255, 255);
     display: flex;
-    justify-content: center;
+    grid-template-columns: repeat(6, 3fr);
+    gap: 3%;
+    align-items: center;
 }
-.aud{
-    width: 100%;
-    top: -140%;
-    left: 5%;
-}
+    .aud {
+        width: 100%;
+        top: -60%;
+        left: 5%;
+    }
+    .login{
+        font-size: 50%;
+        gap: 0%;
+    }
+    .tex{
+        font-size: 60%;
+    }
 }
