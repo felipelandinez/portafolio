@@ -1150,13 +1150,15 @@
 }
 
 @media (max-width: 480px) {
-    .tex {
-        text-align: center;
-    }
-
     .login {
-        font-size: 70%;
+        font-size: 80%;
         gap: 0%;
+    }
+    .lupa,.bolsa{
+        width: 100%;
+    }
+    .tex{
+        font-size: 0%;
     }
 
     .aud {
@@ -1165,6 +1167,17 @@
         left: 5%;
     }
 }
+@media (max-width: 450px) {
+    .tex{
+        font-size: 0%;}
+        .login {
+        font-size: 80%;
+        gap: 0%;
+    }
+    .lupa,.bolsa{
+        width: 100%;
+    }
+    }
 
 @media (max-width: 430px) {
     .hijo_1_1 {
@@ -1176,12 +1189,15 @@
     }
 
     .login {
-        font-size: 50%;
+        font-size: 80%;
         gap: 0%;
+    }
+    .lupa,.bolsa{
+        width: 100%;
     }
 
     .tex {
-        font-size: 60%;
+        font-size: 0%;
     }
 
     .aud {
