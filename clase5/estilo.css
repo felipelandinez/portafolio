@@ -186,16 +186,23 @@ h1 {
 
 
 @media (max-width: 500px) {
-    h1 {
-        font-size: 1.8rem;
+   .padre {
+        grid-template-columns: 100%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    img {
-        width: 70%;
+    h1 {
+        font-size: 2rem;
+    }
+    .hijo_2 {
+        text-align: center;
     }
     .linea{
         display: flex;
         justify-content: center;
+        padding-left: 0%;
     }
     .aptitudes{
         display: flex;
@@ -205,76 +212,107 @@ h1 {
         display: flex;
         justify-content: center;
     }
-    .h_4, .h_5, .h_6 {
-        font-size: 1rem;
-        gap: 3%;
-        flex-direction: column;
-        text-align: center;
+    .rr{
+        display: flex;
+        justify-content: center;
     }
-
+    .gg{
+        padding-bottom: 3%;
+    }
+    .h_4, .h_5, .h_6 {
+        font-size: 120%;
+        gap: 2%;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
 }
+
 @media (max-width: 480px) {
-    .llineas {
-        width: 85%; 
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-    .padre {
-        width: 100%;
-        padding: 5px;
-    }
-    h1 {
-        font-size: 1.7rem;
+   .padre {
+        grid-template-columns: 100%;
         text-align: center;
-    }
-    img {
-        width: 75%; 
-        height: auto;
-        margin: 0 auto;
-        display: block;
-    }
-    .linea {
         display: flex;
-        justify-content: center;
-    }
-    .aptitudes {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-    .tex {
-        display: flex;
-        justify-content: center;
-    }
-    .h_4, .h_5, .h_6 {
-        font-size: 1rem;
-        gap: 5%;
-        text-align: center;
         flex-direction: column;
-    }
-    .img_u {
-        width: 9%;
-        padding: 1%;
-    }
-}
-
-@media (max-width: 400px) {
-    .padre {
-        width: 100%;
-        padding: 5px;
+        align-items: center;
     }
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
-    img {
-        width: 60%;
-        height: auto;
-        margin: 0 auto;
-        display: block;
+    .hijo_2 {
+        text-align: center;
     }
     .linea{
         display: flex;
+        justify-content: center;
+        padding-left: 0%;
+    }
+    .aptitudes{
+        display: flex;
+        justify-content: center;
+    }
+    .tex{
+        display: flex;
+        justify-content: center;
+    }
+    .rr{
+        display: flex;
+        justify-content: center;
+    }
+    .gg{
+        padding-bottom: 3%;
+    }
+    .h_4, .h_5, .h_6 {
+        font-size: 120%;
+        gap: 2%;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
+
+
+@media (max-width: 400px) {
+  .padre {
+        grid-template-columns: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .hijo_2 {
+        text-align: center;
+    }
+    .linea{
+        display: flex;
+        justify-content: center;
+        padding-left: 0%;
+    }
+    .aptitudes{
+        display: flex;
+        justify-content: center;
+    }
+    .tex{
+        display: flex;
+        justify-content: center;
+    }
+    .rr{
+        display: flex;
+        justify-content: center;
+    }
+    .gg{
+        padding-bottom: 3%;
+    }
+    .h_4, .h_5, .h_6 {
+        font-size: 120%;
+        gap: 2%;
+        text-align: center;
+        flex-wrap: wrap;
         justify-content: center;
     }
     .aptitudes{
@@ -301,25 +339,68 @@ h1 {
         display: block;
         margin: 0 auto;
     }
+    .padre {
+        grid-template-columns: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .hijo_2 {
+        text-align: center;
+    }
+    .linea{
+        display: flex;
+        justify-content: center;
+        padding-left: 0%;
+    }
+    .aptitudes{
+        display: flex;
+        justify-content: center;
+    }
+    .tex{
+        display: flex;
+        justify-content: center;
+    }
+    .rr{
+        display: flex;
+        justify-content: center;
+    }
+    .gg{
+        padding-bottom: 3%;
+    }
+    .h_4, .h_5, .h_6 {
+        font-size: 120%;
+        gap: 2%;
+        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
+
+
 
 @media (max-width: 300px) {
     .padre {
-        width: 100%;
-        padding: 5px;
+        grid-template-columns: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
-    img {
-        width: 60%;
-        height: auto;
-        margin: 0 auto;
-        display: block;
+    .hijo_2 {
+        text-align: center;
     }
     .linea{
         display: flex;
         justify-content: center;
+        padding-left: 0%;
     }
     .aptitudes{
         display: flex;
@@ -329,20 +410,19 @@ h1 {
         display: flex;
         justify-content: center;
     }
+    .rr{
+        display: flex;
+        justify-content: center;
+    }
+    .gg{
+        padding-bottom: 3%;
+    }
     .h_4, .h_5, .h_6 {
-        font-size: 0.9rem;
-        gap: 5%;
+        font-size: 120%;
+        gap: 2%;
         text-align: center;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    .img_u {
-        width: 12%;
-        padding: 1.5%;
-    }
-    .llineas {
-        width: 90%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
+    
 }
