@@ -660,6 +660,9 @@
         top: -100%;
         left: 1%;
     }
+    .t_4_3_3{
+        font-size: 220%;
+    }
 }
 
 @media (max-width: 1020px) {
@@ -1185,5 +1188,8 @@
         width: 100%;
         top: -60%;
         left: 5%;
+    }
+    .tex_2_3{
+        font-size: 250%;
     }
 }
