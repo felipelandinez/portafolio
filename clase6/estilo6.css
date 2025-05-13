@@ -160,14 +160,14 @@
     font-family: 'Arial', sans-serif;
     color: aliceblue;
     width: 90%;
-    padding-left: 10%;
+    padding-left: 15%;
     border-radius: 60px;
-    padding-bottom: 15%;
+
     position: relative;
 }
 
 .t_1 {
-    padding-top: 50%;
+    padding-top: 70%;
 }
 
 .t_2 {
@@ -202,14 +202,13 @@
     font-family: 'Arial', sans-serif;
     color: aliceblue;
     width: 90%;
-    padding-left: 10%;
+    padding-left: 15%;
     border-radius: 60px;
-    padding-bottom: 15%;
     position: relative;
 }
 
 .t_2_1 {
-    padding-top: 50%;
+    padding-top: 70%;
 }
 
 .t_2_2 {
@@ -246,12 +245,12 @@
     width: 100%;
     padding-left: 10%;
     border-radius: 60px;
-    padding-bottom: 15%;
+    padding-bottom: 5%;
     position: relative;
 }
 
 .t_3_1 {
-    padding-top: 20%;
+    padding-top: 25%;
 }
 
 .t_3_2 {
@@ -315,7 +314,7 @@
 .t_4_3 {
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-size: 300%;
+    font-size: 270%;
     font-weight: 900;
 }
 
@@ -420,9 +419,9 @@
 .aur {
     width: 100%;
     position: absolute;
-    top: -1%;
-    left: 5%;
-    height: 100%;
+    top: -20%;
+    left: -5%;
+    height: 120%;
     padding-right: 7%;
     padding-top: 5%;
 }
@@ -438,21 +437,21 @@
 }
 
 .pc {
-    width: 100%;
+    width: 80%;
     position: absolute;
     top: -1%;
-    left: 20%;
+    left: 40%;
     height: 100%;
     padding-right: 7%;
     padding-top: 5%;
 }
 
 .ps5 {
-    width: 60%;
+    width: 40%;
     position: absolute;
-    top: 7%;
-    left: 47%;
-    height: 90%;
+    top: 15%;
+    left: 67%;
+    height: 70%;
     padding-right: 7%;
     padding-top: 5%;
 }
@@ -460,18 +459,19 @@
 .reali {
     width: 100%;
     position: absolute;
-    top: 10%;
-    left: 5%;
-    height: 90%;
+    top: 45%;
+    left: 7%;
+    height: 55%;
     padding-right: 7%;
+    border-radius: 60px;
 }
 
 .speak {
-    width: 100%;
+    width: 80%;
     position: absolute;
     top: 45%;
-    left: 1%;
-    padding-right: 7%;
+    left: 20%;
+
 }
 
 .hijo5 {
@@ -480,6 +480,7 @@
     width: 90%;
     background-color: white;
     padding-top: 2%;
+    margin-bottom: 5%;
 }
 
 .imgss {
@@ -651,6 +652,10 @@
     .bolsa {
         width: 30%;
     }
+
+    .t_3 {
+        font-size: 150%;
+    }
 }
 
 @media (max-width: 1245px) {
@@ -660,8 +665,13 @@
         top: -100%;
         left: 1%;
     }
-    .t_4_3_3{
+
+    .t_4_3_3 {
         font-size: 220%;
+    }
+
+    .tex_2_3 {
+        font-size: 450%;
     }
 }
 
@@ -689,6 +699,7 @@
 
     .hijo_1_1 {
         width: 90%;
+
     }
 
     .hijo_1_2 {
@@ -739,6 +750,7 @@
     .hijo_3_1,
     .hijo_3_2 {
         width: 49%;
+        padding-bottom: 5%;
     }
 
     .hijo_3_3 {
@@ -827,7 +839,8 @@
 
     .reali {
         padding-right: 0%;
-        left: -3%;
+        left: -1%;
+
     }
 
     .pc {
@@ -841,8 +854,8 @@
         left: 49.7%;
         padding-top: 0%;
         padding-right: 0%;
-        top: 35%;
-        width: 50%;
+        top: 45%;
+        width: 48%;
         height: 50%;
     }
 
@@ -978,22 +991,87 @@
 }
 
 @media (max-width: 710px) {
-
-    .aud {
-        padding: 0%;
-        width: 150%;
-        left: 30%;
-        top: -50%;
-    }
-
     .tex {
         font-family: 'Arial', sans-serif;
         color: gray;
         font-size: 90%;
     }
+
+    .hijo6 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hijo6 {
+        text-align: center;
+    }
+
+    .hijo6_izquierda {
+        padding-left: 0%;
+    }
+
+    .hijo6_izquierda .txt_grande {
+        font-size: 350%;
+        width: 100%;
+        padding-left: 0%;
+        text-align: center;
+    }
+
+    .hijo6_izquierda .txt_peq_abajo,
+    .hijo6_derecha .txt_peq_abajo {
+        font-size: 90%;
+        color: #f8dada;
+        width: 100%;
+    }
+
+    .hijo6_derecha {
+        padding-right: 0%;
+    }
+
+    .bot6 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .aud {
+        width: 90%;
+        top: -150%;
+        left: 10%;
+    }
+
+    .hijo5 {
+        margin-bottom: 20%;
+    }
+
+    .txt_peq {
+        padding-top: 10%;
+    }
+}
+
+@media (max-width:690px) {
+    .tex_2_3 {
+        font-size: 450%;
+    }
+}
+
+@media (max-width:625px) {
+    .tex_2_3 {
+        font-size: 400%;
+    }
+
+    .ph {
+        font-size: 100%;
+    }
 }
 
 @media (max-width:590px) {
+
+    .lupa,
+    .bolsa {
+        width: 70%;
+    }
+
     .hijo1 {
         background-color: rgb(255, 255, 255);
         display: grid;
@@ -1003,7 +1081,7 @@
     }
 
     .tex_2_3 {
-        font-size: 450%;
+        font-size: 300%;
     }
 
     .img1 {
@@ -1017,9 +1095,59 @@
         color: gray;
         font-size: 70%;
     }
+
+    .hijo6 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hijo6 {
+        text-align: center;
+    }
+
+    .hijo6_izquierda {
+        padding-left: 0%;
+    }
+
+    .hijo6_izquierda .txt_grande {
+        font-size: 350%;
+        width: 100%;
+        padding-left: 0%;
+        text-align: center;
+    }
+
+    .hijo6_izquierda .txt_peq_abajo,
+    .hijo6_derecha .txt_peq_abajo {
+        font-size: 90%;
+        color: #f8dada;
+        width: 100%;
+    }
+
+    .hijo6_derecha {
+        padding-right: 0%;
+    }
+
+    .bot6 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .aud {
+        width: 100%;
+        top: -140%;
+        left: 5%;
+    }
+
+    .hijo5 {
+        margin-bottom: 20%;
+    }
 }
 
 @media (max-width: 550px) {
+    .tex_2_3 {
+        font-size: 300%;
+    }
 
     .tex {
         font-family: 'Arial', sans-serif;
@@ -1147,39 +1275,72 @@
         top: -140%;
         left: 5%;
     }
+
+    .hijo5 {
+        margin-bottom: 20%;
+    }
 }
 
 @media (max-width: 480px) {
+    .tex_2_3 {
+        font-size: 300%;
+    }
+
     .login {
         font-size: 80%;
         gap: 0%;
     }
-    .lupa,.bolsa{
+
+    .lupa,
+    .bolsa {
         width: 100%;
     }
-    .tex{
-        font-size: 0%;
-    }
+
 
     .aud {
         width: 100%;
         top: -120%;
         left: 5%;
     }
+
+    .pc {
+        left: 55%;
+        width: 50%;
+    }
+
+    .ps5 {
+        width: 30%;
+        left: 50%;
+        top: 60%;
+        height: 40%;
+    }
 }
+
 @media (max-width: 450px) {
-    .tex{
-        font-size: 0%;}
-        .login {
+    .home {
+        font-size: 80%;
+    }
+
+    .tex_2_3 {
+        font-size: 300%;
+    }
+
+    .login {
         font-size: 80%;
         gap: 0%;
     }
-    .lupa,.bolsa{
+
+    .lupa,
+    .bolsa {
         width: 100%;
     }
-    }
+}
 
 @media (max-width: 430px) {
+    .tex_2_3 {
+        font-size: 450%;
+    }
+
     .hijo_1_1 {
         background-color: rgb(255, 255, 255);
         display: flex;
@@ -1189,15 +1350,25 @@
     }
 
     .login {
-        font-size: 80%;
+        font-size: 60%;
         gap: 0%;
     }
-    .lupa,.bolsa{
-        width: 100%;
+
+    .lupa,
+    .bolsa {
+        width: 80%;
+    }
+
+    .ph {
+        font-size: 90%
+    }
+
+    .home {
+        font-size: 80%
     }
 
     .tex {
-        font-size: 0%;
+        font-size: 70%;
     }
 
     .aud {
@@ -1205,7 +1376,72 @@
         top: -60%;
         left: 5%;
     }
-    .tex_2_3{
+
+    .tex_2_3 {
         font-size: 250%;
+    }
+}
+
+@media (max-width: 425px) {
+    .ph {
+        font-size: 80%;
+    }
+
+    .home {
+        font-size: 70%;
+    }
+
+    .tex {
+        font-size: 60%;
+    }
+
+    .login {
+        font-size: 70%;
+    }
+
+    .hijo_3_3 .t_3_3,
+    .hijo_4_1 .t_4_3,
+    .hijo_4_2 .t_4_2_3,
+    .hijo_4_3 .t_4_3_3 {
+        font-size: 280%;
+    }
+
+    .tex_2_3 {
+        font-size: 230%;
+    }
+
+    .tex_2_2 {
+        font-size: 180%;
+    }
+
+    .aud {
+        width: 90%;
+        top: -60%;
+        left: 10%;
+    }
+
+    .hijo5 {
+        margin-bottom: 20%;
+    }
+
+    .txt_peq {
+        padding-top: 10%;
+    }
+}
+@media (max-width: 360px){
+    .ph {
+        font-size: 70%;
+    }
+
+    .home {
+        font-size: 60%;
+    }
+
+    .tex {
+        font-size: 50%;
+    }
+
+    .login {
+        font-size: 60%;
     }
 }
