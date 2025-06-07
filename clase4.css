@@ -71,6 +71,16 @@
     margin-bottom: 30px;
     margin-top: 2%;
 }
+.hijo6{
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+   
+}
 
 .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2 {
     background: white;
@@ -148,7 +158,7 @@ button {
         text-align: center;
     }
 
-    .hijo3, .hijo4, .hijo5 {
+    .hijo3, .hijo4, .hijo5, .hijo_6 {
         flex-direction: column;
         align-items: center;
     }

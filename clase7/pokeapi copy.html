@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .padre {
+
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+
+        .hijo_1 {
+            width: 800px;
+            background: #111;
+            border: 6px solid #000;
+            display: flex;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .hijo_2 {
+            width: 40%;
+            background: #cf0404;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .hijo_3 {
+            width: 60%;
+            background: #f1f1f1;
+            color: #333;
+            padding: 20px;
+            border-left: 6px solid #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .botones {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .boton {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #eee;
+            border: 2px solid #333;
+        }
+
+        .boton.rojo {
+            background: red;
+        }
+
+        .boton.amarillo {
+            background: yellow;
+        }
+
+        .boton.verde {
+            background: green;
+        }
+
+        .pantalla {
+            width: 100%;
+            background-color: #222;
+            border: 4px inset #444;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pantalla img {
+            max-height: 180px;
+            max-width: 100%;
+        }
+
+        .info_pokemon {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        #numero {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        #nombre {
+            font-size: 24px;
+            text-transform: capitalize;
+        }
+
+        #tipos {
+            margin-top: 10px;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin: 4px;
+            font-size: 13px;
+            color: white;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        #pesoAltura {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .stat {
+            margin-bottom: 10px;
+        }
+
+        .nombre_stat {
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        .contenedor_barra {
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 12px;
+        }
+
+        .barra {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .debilidades {
+            margin-top: 10px;
+        }
+
+        .boton-buscar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #464746;
+            border: 2px solid #222;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: 0 0 5px #000;
+        }
+
+        .boton-buscar:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 2px #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="padre">
+        <div class="hijo_1" id="contenedor_pokedex">
+            <div class="hijo_2">
+                <div class="botones">
+                    <div class="boton rojo"></div>
+                    <div class="boton amarillo"></div>
+                    <div class="boton verde"></div>
+                </div>
+                <div class="pantalla" id="pantalla">
+                    <img src="" id="imagen_pokemon" alt="Imagen Pokémon" />
+                </div>
+                <div class="info_pokemon">
+                    <div id="numero"></div>
+                    <div id="nombre"></div>
+                    <div id="tipos"></div>
+                    <div id="pesoAltura">
+                        <div id="peso"></div>
+                        <div id="altura"></div>
+                    </div>
+                    <button class="boton-buscar" onclick="location.reload()"></button>
+                </div>
+            </div>
+            <div class="hijo_3">
+                <div id="estadisticas">
+                    <h3>Estadísticas</h3>
+                </div>
+                <div class="debilidades">
+                    <h3>Debilidades</h3>
+                    <div id="debilidades"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const coloresTipos = {
+            normal: '#a4a4a4', fire: '#e94127', water: '#559ad3',
+            electric: '#f3d153', grass: '#53a93a', ice: '#93d5f5',
+            fighting: '#bf403a', poison: '#7d57a0', ground: '#dbbf75',
+            flying: '#a4d7d8', psychic: '#c97295', bug: '#d8de58',
+            rock: '#845c39', ghost: '#6d5b95', dragon: '#524e9b',
+            dark: '#4d4844', steel: '#5b8196', fairy: '#dfb8d7'
+        };
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const idAleatorio = Math.floor(Math.random() * 898) + 1;
+
+            try {
+                const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`);
+                const datos = res.data;
+
+                const especie = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${idAleatorio}`);
+                const nombreEsp = especie.data.names.find(n => n.language.name === "es")?.name || datos.name;
+
+                const img = datos.sprites.other.home.front_default || datos.sprites.front_default;
+                document.getElementById("imagen_pokemon").src = img;
+                document.getElementById("numero").textContent = `No.${String(idAleatorio).padStart(3, "0")}`;
+                document.getElementById("nombre").textContent = nombreEsp;
+
+                const tiposCont = document.getElementById("tipos");
+                tiposCont.innerHTML = "";
+
+                const tipo1 = datos.types[0].type.name;
+                const color1 = coloresTipos[tipo1] || "#333";
+
+                if (datos.types.length > 1) {
+                    const tipo2 = datos.types[1].type.name;
+                    const color2 = coloresTipos[tipo2] || "#555";
+                    document.getElementById("pantalla").style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+                } else {
+                    document.getElementById("pantalla").style.background = color1;
+                }
+
+                for (const tipo of datos.types) {
+                    const tipoData = await axios.get(tipo.type.url);
+                    const tipoEs = tipoData.data.names.find(n => n.language.name === "es")?.name || tipo.type.name;
+
+                    const span = document.createElement("span");
+                    span.classList.add("etiqueta");
+                    span.style.backgroundColor = coloresTipos[tipo.type.name] || "#777";
+                    span.textContent = tipoEs;
+                    tiposCont.appendChild(span);
+                }
+
+                document.getElementById("peso").textContent = `Peso: ${(datos.weight / 10).toFixed(1)} kg`;
+                document.getElementById("altura").textContent = `Altura: ${(datos.height / 10).toFixed(1)} m`;
+
+                const statsCont = document.getElementById("estadisticas");
+                statsCont.innerHTML = "<h3>Estadísticas</h3>";
+
+                for (const stat of datos.stats) {
+                    const statData = await axios.get(stat.stat.url);
+                    const statEs = statData.data.names.find(n => n.language.name === "es")?.name || stat.stat.name;
+
+                    const div = document.createElement("div");
+                    div.classList.add("stat");
+
+                    const label = document.createElement("div");
+                    label.classList.add("nombre_stat");
+                    label.textContent = `${statEs}: ${stat.base_stat}`;
+
+                    const barraCont = document.createElement("div");
+                    barraCont.classList.add("contenedor_barra");
+
+                    const barra = document.createElement("div");
+                    barra.classList.add("barra");
+                    barra.style.width = `${Math.min((stat.base_stat / 200) * 100, 100)}%`;
+                    barra.style.backgroundColor = color1;
+
+                    barraCont.appendChild(barra);
+                    div.appendChild(label);
+                    div.appendChild(barraCont);
+                    statsCont.appendChild(div);
+                }
+
+                const debilCont = document.getElementById("debilidades");
+                debilCont.innerHTML = "";
+
+                const tipoBaseData = await axios.get(datos.types[0].type.url);
+                const debiles = tipoBaseData.data.damage_relations.double_damage_from;
+
+                for (const debil of debiles) {
+                    const tipoDebilData = await axios.get(debil.url);
+                    const nombreDebilEs = tipoDebilData.data.names.find(n => n.language.name === "es")?.name || debil.name;
+
+                    const span = document.createElement("span");
+                    span.classList.add("etiqueta");
+                    span.style.backgroundColor = coloresTipos[debil.name] || "#888";
+                    span.textContent = nombreDebilEs;
+                    debilCont.appendChild(span);
+                }
+            } catch (error) {
+                console.error("Error cargando Pokémon:", error);
+            }
+        });
+    </script>
+</body>
+
+</html>
