@@ -38,16 +38,18 @@
             #registros {
                 justify-content: center;
             }
-             @media (max-width: 420px){
-                .AD{
-                   font-size: 150%;
+
+            @media (max-width: 420px) {
+                .AD {
+                    font-size: 150%;
                 }
-             }
-              @media (max-width: 320px){
-                .AD{
-                   font-size: 130%;
+            }
+
+            @media (max-width: 320px) {
+                .AD {
+                    font-size: 130%;
                 }
-             }
+            }
         </style>
     </head>
 
@@ -245,15 +247,31 @@
                     card.className = "card mx-auto shadow-lg rounded-4 border-0 m-3";
                     card.style.width = "22rem";
 
+
                     card.innerHTML = `
-            <div class="card-header bg-gradient bg-danger text-white rounded-top-4 d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Cita #${item.numeroCita}: ${item.nombre} <span class="badge bg-light text-dark">${item.tipo}</span></h5>
-                <select onchange="cambiarEstado(${i}, this.value)" class="form-select form-select-sm w-auto">
-                  <option value="Abierta" ${item.estado === 'Abierta' ? 'selected' : ''}>Abierta</option>
-                  <option value="Terminada" ${item.estado === 'Terminada' ? 'selected' : ''}>Terminada</option>
-                  <option value="Anulada" ${item.estado === 'Anulada' ? 'selected' : ''}>Anulada</option>
-                </select>
-            </div>
+  <div class="card-header bg-gradient bg-danger text-white rounded-top-4">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <h5 class="mb-0">
+        Cita #${item.numeroCita}: ${item.nombre}
+      </h5>
+      <span class="badge bg-light text-dark d-inline-flex align-items-center gap-2 p-2" style="font-size: 1rem;">
+        <span style="font-size: 1.8rem;">${item.tipo.split(" ")[0]}</span>
+        <span style="font-size: 1rem;">${item.tipo.split(" ").slice(1).join(" ")}</span>
+      </span>
+    </div>
+
+    <!-- Estado alineado a la derecha -->
+    <div class="mt-2 d-flex align-items-center gap-2">
+      <label class="mb-0 fw-semibold" for="estadoSelect_${i}">Estado:</label>
+      <select id="estadoSelect_${i}" onchange="cambiarEstado(${i}, this.value)" 
+              class="form-select form-select-sm fw-semibold w-auto" 
+              style="font-size: 1rem; height: 38px; min-width: 130px; padding: 6px 12px;">
+        <option value="Abierta" ${item.estado === 'Abierta' ? 'selected' : ''}>Abierta</option>
+        <option value="Terminada" ${item.estado === 'Terminada' ? 'selected' : ''}>Terminada</option>
+        <option value="Anulada" ${item.estado === 'Anulada' ? 'selected' : ''}>Anulada</option>
+      </select>
+    </div>
+  </div>
             <div class="card-body">
                 <ul class="list-unstyled mb-3">
                     <li><strong>👤 Propietario:</strong> ${item.propietario}</li>
@@ -329,22 +347,45 @@
                 const sintomas = document.getElementById("sintomas").value.trim();
 
                 if (nombreMascota === "") {
-                    Swal.fire("Por favor, digita el nombre de la mascota");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, digita el nombre de la mascota"
+                    });
                     validacion = false;
                     return;
                 }
                 if (propietario === "") {
-                    Swal.fire("Por favor, digita el nombre del propietario");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, digita el nombre del propietario"
+                    });
                     validacion = false;
                     return;
                 }
                 if (telefono === "") {
-                    Swal.fire("Por favor, digita el teléfono");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, digita el teléfono"
+                    });
                     validacion = false;
                     return;
                 }
+                const soloNumeros = /^\d{10}$/;
+                if (!soloNumeros.test(telefono)) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "El teléfono debe contener 10 números"
+                    });
+                    validacion = false;
+                    return;
+                }
+
                 if (fechaCita === "") {
-                    Swal.fire("Por favor, selecciona la fecha de la cita");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, selecciona la fecha de la cita"
+                    });
                     validacion = false;
                     return;
                 }
@@ -356,35 +397,50 @@
                 const fechaSeleccionada = new Date(fechaCita + "T00:00");
 
                 if (fechaSeleccionada < mañana) {
-                    Swal.fire("La fecha de la cita debe ser al menos un día después de hoy.");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "La fecha programada para la cita debe ser posterior al día actual."
+                    });
                     validacion = false;
                     return;
                 }
 
                 if (horaCita === "") {
-                    Swal.fire("Por favor, selecciona la hora de la cita");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, selecciona la hora de la cita"
+                    });
                     validacion = false;
                     return;
                 }
 
                 const [hora, minuto] = horaCita.split(":").map(Number);
                 if (hora < 8 || hora > 20 || (hora === 20 && minuto > 0)) {
-                    Swal.fire("La cita debe ser entre las 08:00am y las 08:00pm");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "La cita debe ser entre las 08:00am y las 08:00pm"
+                    });
                     validacion = false;
                     return;
                 }
                 if (tipoMascota === "") {
-                    Swal.fire("Por favor, selecciona el tipo de mascota");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, selecciona el tipo de mascota"
+                    });
                     validacion = false;
                     return;
                 }
                 if (sintomas === "") {
-                    Swal.fire("Por favor, describe los síntomas");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...", text: "Por favor, describe los síntomas"
+                    });
                     validacion = false;
                     return;
                 }
                 if (sintomas.length > 400) {
-                    Swal.fire("Los síntomas no pueden superar los 400 caracteres");
+                    Swal.fire({ icon: "error", title: "Oops...", text: "Los síntomas no pueden superar los 400 caracteres" });
                     validacion = false;
                     return;
                 }
