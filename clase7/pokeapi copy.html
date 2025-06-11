@@ -27,7 +27,7 @@
 
 
         .hijo_1 {
-            width: 800px;
+            width: 50%;
             background: #111;
             border: 6px solid #000;
             display: flex;
@@ -127,6 +127,7 @@
             color: white;
             font-weight: bold;
             text-transform: capitalize;
+              
         }
 
         #pesoAltura {
@@ -157,6 +158,7 @@
 
         .debilidades {
             margin-top: 10px;
+            
         }
 
         .boton-buscar {
@@ -174,6 +176,145 @@
             transform: scale(0.95);
             box-shadow: 0 0 2px #333;
         }
+        .poktitulo{
+         margin-top: 2%;
+        margin-bottom: 2%;
+      }
+      @media (max-width: 840px) {
+            .padre{
+                height: 0%;
+            }
+      .hijo_1 {
+        flex-direction: column;
+        width: 70%;
+      }
+
+      .hijo_2
+       {
+        width: 100%;
+        min-width: unset;
+        border-left: none;
+        border-top: 6px solid #000;
+      }
+
+      .hijo_3 {
+        border-top: none;
+        border-left: 6px solid #000;
+        width: 100%;
+        min-width: unset;
+        border-left: none;
+        border-top: 6px solid #000;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .pantalla img {
+        max-height: 250px;
+      }
+      .poktitulo{
+         margin-top: 2%;
+        margin-bottom: 2%;
+        width: 60%;
+      }
+      #numero,#nombre,#peso,#altura{
+       font-size: 300%;
+      }
+      .etiqueta{
+        width: 55%;
+        font-size: 150%;
+      }
+      .debilidades{
+        font-size: 100%;
+        width: 70%;
+        text-align: center;
+        justify-items: center;
+      }
+    }
+    
+        @media (max-width: 768px) {
+            .padre{
+                height: 0%;
+            }
+      .hijo_1 {
+        flex-direction: column;
+        width: 70%;
+      }
+
+      .hijo_2
+       {
+        width: 100%;
+        min-width: unset;
+        border-left: none;
+        border-top: 6px solid #000;
+      }
+
+      .hijo_3 {
+        border-top: none;
+        border-left: 6px solid #000;
+        width: 100%;
+        min-width: unset;
+        border-left: none;
+        border-top: 6px solid #000;
+      }
+
+      .pantalla img {
+        max-height: 250px;
+      }
+      .poktitulo{
+         margin-top: 2%;
+        margin-bottom: 2%;
+      }
+      .etiqueta{
+        width: 60%;
+        font-size: 130%;
+      }
+    }
+     @media (max-width: 520px) {
+            .padre{
+                height: 0%;
+            }
+      .hijo_1 {
+        flex-direction: column;
+        width: 85%;
+      }
+    #numero,#nombre,#tipos,#peso,#altura{
+       font-size: 250%;
+      }
+      .etiqueta{
+        width: 65%;
+        font-size: 60%;
+      }
+      .debilidades{
+        width: 60%;
+        font-size: 200%;
+        margin-top: 0%;
+      }
+      .h3{
+        font-size: 70%;
+      }
+    }
+   @media (max-width: 440px) {
+  .hijo_3 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .debilidades {
+    width: 60%;
+    margin: 0 auto;           
+    text-align: center;       
+  }
+
+  .debilidades #debilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 4px;
+  }
+}
+
+
     </style>
 </head>
 
@@ -206,8 +347,8 @@
                     <h3>Estadísticas</h3>
                 </div>
                 <div class="debilidades">
-                    <h3>Debilidades</h3>
-                    <div id="debilidades"></div>
+                    <h3 class="h3">Debilidades</h3>
+                    <div id="debilidades" ></div>
                 </div>
             </div>
         </div>
