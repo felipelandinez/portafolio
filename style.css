@@ -142,10 +142,11 @@ button {
 }
 
 .img_tienda {
-    width: 100%;
-    height: 150px; 
-    object-fit: cover;
+    width: 150px;      /* Ajusta el tamaño según lo que necesites */
+    height: 150px;     /* Mantén proporción cuadrada */
+    object-fit: cover; /* Recorta la imagen para que no se deforme */
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
