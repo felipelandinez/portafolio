@@ -1,226 +1,247 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    text-decoration: none;
 }
 
-.padre {
-    background-color: #ffffff;
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f6f8fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(90deg, #4f8cff 0%, #6ed6ff 100%);
+    padding: 40px 0 30px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.container-header {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    min-height: 100vh;
-    overflow-y: auto;
-}
-
-.hijo1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    padding: 1%;
-}
-
-.hijo2 {
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    padding: 1%;
-    text-align: center;
-}
-
-.tex2 {
-    text-align: right;
-}
-
-.tex1, .tex2, .tex3 {
-    font-family: Poppins, sans-serif;
-    font-weight: bold;
-    color: #154285;
-}
-
-.tex1, .tex2 {
-    font-size: 150%;
-}
-
-.tex3 {
-    font-size: 200%;
-}
-
-.hijo3, .hijo4 {
-    display: flex;
-    justify-content: center;
-    align-items: stretch; 
-    gap: 20px;
-    width: 100%;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-
-.hijo4 {
-    margin-bottom: 30px;
-}
-.hijo5{
-    display: flex;
-    justify-content: center;
-    align-items: stretch; 
-    gap: 20px;
-    width: 100%;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    margin-top: 2%;
-}
-.hijo6{
-    display: flex;
-    justify-content: center;
-    align-items: stretch; 
-    gap: 20px;
-    width: 100%;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-   
-}
-
-.hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2 {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px; 
-    width: 90%; 
-    min-height: 450px; 
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between; 
-    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 30px;
 }
 
-.img_perfil, .img_quiensoy, .img_conciertos, .img_video, .img_ultimo_proyecto {
-    width: 100%;
-    height: 150px; 
+.header-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 10px;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-button {
-    background-color: #154285;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 120px; 
-    height: 40px;
-    font-size: 16px;
-    margin-top: auto; 
-}
-.a{
-    color: #ffffff;
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a237e;
 }
 
-.tex1hijo3, .tex2hijo3, .tex1hijo4, .tex2hijo4, .tex1hijo5 {
-    font-size: 120%;
-    color: #154285;
-    padding: 20px;
-}
-.hijo5_3 {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px; 
-    width: 90%; 
-    min-height: 450px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; 
-    text-align: center;
-}
-
-.img_tienda {
-    width: 150px;      /* Ajusta el tamaño según lo que necesites */
-    height: 150px;     /* Mantén proporción cuadrada */
-    object-fit: cover; /* Recorta la imagen para que no se deforme */
-    border-radius: 10px;
+.header-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1565c0;
     margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-    .hijo1 {
-        grid-template-columns: 1fr; 
-        text-align: center;
-    }
+.header-desc {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
 
-    .tex2 {
-        text-align: center;
-    }
+/* Proyectos */
+.proyectos {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-    .hijo3, .hijo4, .hijo5, .hijo_6 {
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1976d2;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(76, 175, 255, 0.08);
+    padding: 22px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(76, 175, 255, 0.18);
+}
+
+.card-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1976d2;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card-desc {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.18s;
+    box-shadow: 0 2px 8px rgba(76, 175, 255, 0.12);
+}
+
+.card-btn:hover {
+    background: #1565c0;
+}
+
+/* Sección de contacto elegante */
+.contacto {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.contacto-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 24px;
+    align-items: center;
+}
+
+.contacto-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.15rem;
+    color: #3fa34d;
+    background: #232526;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.18s, color 0.18s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.contacto-link i {
+    font-size: 1.3rem;
+}
+
+.contacto-link:hover {
+    background: #3fa34d;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    background: #1a237e;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #90caf9;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Barra de contacto elegante arriba a la derecha */
+.contact-bar {
+    position: fixed;
+    top: 18px;
+    right: 32px;
+    display: flex;
+    gap: 18px;
+    z-index: 100;
+}
+
+.contact-bar-link {
+    background: #4f8cff; /* azul celeste */
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(76, 175, 255, 0.12);
+    transition: background 0.18s, color 0.18s, transform 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-bar-link:hover {
+    background: #6ed6ff; /* azul más claro al pasar el mouse */
+    color: #222;
+    transform: scale(1.12);
+}
+
+@media (max-width: 700px) {
+    .container-header {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2, .hijo5_3 {
-        width: 90%;
-        max-width: 250px;
-        min-height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .tex1, .tex2 {
-        font-size: 120%;
-    }
-
-    .tex3 {
-        font-size: 150%;
-    }
-
-    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2, .hijo5_3 {
-        max-width: 220px;
-        padding: 15px;
-    }
-
-    button {
-        width: 100%;
-        height: 35px;
-        font-size: 14px;
-        margin-top: 10px;
-        box-sizing: border-box;
-    }
-
-    .a {
-        display: block;
-        width: 100%;
         text-align: center;
-        color: #ffffff;
-        text-decoration: none;
+        gap: 18px;
     }
-}
-
-@media (max-width: 300px) {
-    .hijo1 {
-        padding: 2%;
+    .header-img {
+        margin-bottom: 10px;
     }
-
-    .tex1, .tex2, .tex3 {
-        font-size: 100%;
+    .proyectos {
+        padding: 0 8px;
     }
-
-    .hijo3_1, .hijo3_2, .hijo4_1, .hijo5_1, .hijo5_2, .hijo5_3 {
-        width: 100%;
-        max-width: 180px;
-        padding: 10px;
+    .section-title {
+        font-size: 1.4rem;
     }
-
-    button {
-        width: 90px;
-        height: 30px;
-        font-size: 12px;
+    .contact-bar {
+        top: 10px;
+        right: 10px;
+        gap: 10px;
+    }
+    .contact-bar-link {
+        font-size: 1.1rem;
+        padding: 8px;
     }
 }
 
